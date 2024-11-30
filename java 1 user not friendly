@@ -1,0 +1,133 @@
+//user একটা ডাটা দিলে বাকি 4 টায় একসঙ্গে error আসবে না । পরেরটায় error আসবে শুধু।
+
+
+package com.timeforschool.problem;
+
+import android.os.Bundle;
+import android.provider.BlockedNumberContract;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import soup.neumorphism.NeumorphButton;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+
+
+        EditText edphy=findViewById(R.id.edphy);
+        EditText edche=findViewById(R.id.edche);
+        EditText edbio=findViewById(R.id.edbio);
+        EditText edmath=findViewById(R.id.edmath);
+        EditText edcom=findViewById(R.id.edcom);
+        Button edresult=findViewById(R.id.edresult);
+        TextView tvdisplay=findViewById(R.id.tvdisplay);
+        TextView click=findViewById(R.id.click);
+
+
+        edresult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //for my code smoothness i use trim()
+                // ব্যবহারকারীর ইনপুট থেকে অপ্রয়োজনীয় ফাঁকা স্থান সরিয়ে সঠিক মান পাওয়া।
+                //আপনার কোডে, trim() ব্যবহার না করলে, স্পেসসহ ইনপুট ফ্লোটে কনভার্ট করার সময় ত্রুটি হতে পারে।
+
+                String phyInput = edphy.getText().toString().trim();
+                String chemInput = edche.getText().toString().trim();
+                String bioInput = edbio.getText().toString().trim();
+                String mathInput = edmath.getText().toString().trim();
+                String compInput = edcom.getText().toString().trim();
+
+                // if input is null give error
+                if (TextUtils.isEmpty(phyInput)) {
+                    edphy.setError("Enter your physics mark.");
+                    return;
+                }
+                if (TextUtils.isEmpty(chemInput)) {
+                    edche.setError("Enter your chemistry mark.");
+                    return;
+                }
+                if (TextUtils.isEmpty(bioInput)) {
+                    edbio.setError("Enter your biology mark.");
+                    return;
+                }
+                if (TextUtils.isEmpty(mathInput)) {
+                    edmath.setError("Enter your mathematics mark.");
+                    return;
+                }
+                if (TextUtils.isEmpty(compInput)) {
+                    edcom.setError("Enter your computer mark.");
+                    return;
+                }
+                float edphys = Float.parseFloat(phyInput);
+                float edchem = Float.parseFloat(chemInput);
+                float edbiol = Float.parseFloat(bioInput);
+                float edmaths = Float.parseFloat(mathInput);
+                float edcomp = Float.parseFloat(compInput);
+
+                // mark correct range ??
+                if (edphys < 0 || edphys > 100) {
+                    edphy.setError("Enter your physics number between 0-100");
+                    return;
+                }
+                if (edchem < 0 || edchem > 100) {
+                    edche.setError("Enter your chemistry number between 0-100");
+                    return;
+                }
+                if (edbiol < 0 || edbiol > 100) {
+                    edbio.setError("Enter your biology number between 0-100");
+                    return;
+                }
+                if (edmaths < 0 || edmaths > 100) {
+                    edmath.setError("Enter your mathematics number between 0-100");
+                    return;
+                }
+                if (edcomp < 0 || edcomp > 100) {
+                    edcom.setError("Enter your computer number between 0-100");
+                    return;
+                }
+
+                // total number and their avg
+                float stotal = (edphys + edchem + edbiol + edmaths + edcomp) / 5;
+
+                // grade count
+                if (stotal < 40) {
+                    tvdisplay.setText("You are fail. \nYour grade F");
+                } else if (stotal < 50) {
+                    tvdisplay.setText("You are pass. \nYour grade C");
+                } else if (stotal < 60) {
+                    tvdisplay.setText("You are pass. \nYour grade B");
+                } else if (stotal < 70) {
+                    tvdisplay.setText("You are pass. \nYour grade A-");
+                } else if (stotal < 80) {
+                    tvdisplay.setText("You are pass. \nYour grade A");
+                } else {
+                    tvdisplay.setText("You are pass. \nYour grade A+");
+                }
+            }
+        });
+
+
+
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+}
