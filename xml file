@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="25dp">
+
+    //------------------------------------------------------------
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+    <soup.neumorphism.NeumorphTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Exam Mark"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        />
+</LinearLayout>
+
+
+    //------------------------------------------------------------
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+    <soup.neumorphism.NeumorphButton
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="Physics"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:neumorph_shadowColorDark="#D0C5C9"
+        app:neumorph_shadowColorLight="#B8A39C" />
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            app:neumorph_shapeType="basin"
+            android:orientation="horizontal"
+            app:neumorph_shadowColorDark="#E6DCDF"
+            app:neumorph_shadowColorLight="#8E8D88">
+            <EditText
+                android:id="@+id/edphy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Number"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                />
+        </soup.neumorphism.NeumorphCardView>
+    </LinearLayout>
+
+
+    //------------------------------------------------------------
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Chemistry"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:neumorph_shadowColorDark="#D0C5C9"
+            app:neumorph_shadowColorLight="#B8A39C" />
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            app:neumorph_shapeType="basin"
+            android:orientation="horizontal"
+            app:neumorph_shadowColorDark="#E6DCDF"
+            app:neumorph_shadowColorLight="#8E8D88">
+            <EditText
+                android:id="@+id/edche"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Number"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                />
+        </soup.neumorphism.NeumorphCardView>
+    </LinearLayout>
+
+
+    //------------------------------------------------------------
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Biology"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:neumorph_shadowColorDark="#D0C5C9"
+            app:neumorph_shadowColorLight="#B8A39C" />
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            app:neumorph_shapeType="basin"
+            android:orientation="horizontal"
+            app:neumorph_shadowColorDark="#E6DCDF"
+            app:neumorph_shadowColorLight="#8E8D88">
+            <EditText
+                android:id="@+id/edbio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Number"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                />
+        </soup.neumorphism.NeumorphCardView>
+    </LinearLayout>
+
+    //------------------------------------------------------------
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Mathematics"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:neumorph_shadowColorDark="#D0C5C9"
+            app:neumorph_shadowColorLight="#B8A39C" />
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            app:neumorph_shapeType="basin"
+            android:orientation="horizontal"
+            app:neumorph_shadowColorDark="#E6DCDF"
+            app:neumorph_shadowColorLight="#8E8D88">
+            <EditText
+                android:id="@+id/edmath"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Number"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                />
+        </soup.neumorphism.NeumorphCardView>
+    </LinearLayout>
+
+    //------------------------------------------------------------
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Computer"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:neumorph_shadowColorDark="#D0C5C9"
+            app:neumorph_shadowColorLight="#B8A39C" />
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            app:neumorph_shapeType="basin"
+            android:orientation="horizontal"
+            app:neumorph_shadowColorDark="#E6DCDF"
+            app:neumorph_shadowColorLight="#8E8D88">
+            <EditText
+                android:id="@+id/edcom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Number"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                />
+        </soup.neumorphism.NeumorphCardView>
+    </LinearLayout>
+
+    //------------------------------------------------------------
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/edresult"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:text="Total Result in Grade "
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:neumorph_shadowColorDark="#D0C5C9"
+            app:neumorph_shadowColorLight="#B8A39C" />
+    </LinearLayout>
+
+    //------------------------------------------------------------
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:id="@+id/tvdisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="30sp"
+        ></TextView>
+    </LinearLayout>
+    //------------------------------------------------------------
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        >
+    <TextView
+        android:id="@+id/click"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click here.To know grade sheet."
+        ></TextView>
+    </LinearLayout>
+
+</LinearLayout>
